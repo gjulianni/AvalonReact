@@ -1,0 +1,100 @@
+.tracking {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: transparent;
+    min-height: 80vh;
+    display: flex;
+    padding: 80px; 
+    padding-bottom: 0px;
+    
+}
+
+.tracking #title {
+
+
+  color: #fff;
+  font-size: 4rem;
+}
+
+.card {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 16px; 
+  background: linear-gradient(rgba(4, 2, 8, 0.75),rgba(0,0,0,0.85));
+  border: 1px solid #ffffff;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 15px;
+  box-shadow: 0 0 35px 5px #efeff0;
+  color: #fff;
+  z-index: 1;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card #hostname {
+  max-width: 90%;
+  font-size: 30px;
+}
+
+.card-left {
+  flex: 1; 
+  margin-left: 10px;
+}
+
+.card-left > p {
+  font-size: 1.4rem;
+}
+
+.card-right {
+  margin-left: 16px; 
+}
+
+.card-right img {
+  max-width: 100%; 
+  height: auto; 
+}
+
+
+.btn-connect {
+  --clr-font-main: hsla(0 0% 20% / 100);
+  --btn-bg-1: rgb(168, 168, 168);
+  --btn-bg-2: rgb(231, 231, 231);
+  --btn-bg-color: hsla(360 100% 100% / 1);
+  --radii: 0.5em;
+  cursor: pointer;
+  padding: 1.2em 1.6em;
+  min-width: 170px;
+  min-height: 40px;
+  font-size: var(--size, 1rem);
+  font-family: "Roboto", system-ui, sans-serif;
+  font-weight: 500;
+  transition: 0.8s;
+  background-size: 280% auto;
+  background-image: linear-gradient(325deg, var(--btn-bg-2) 0%, var(--btn-bg-1) 55%, var(--btn-bg-2) 90%);
+  border: none;
+  border-radius: var(--radii);
+  color: black;
+  box-shadow: 0px 0px 10px rgba(252, 252, 252, 0.767), 0px 5px 5px -1px rgba(243, 243, 245, 0.25), inset 4px 4px 8px rgba(237, 236, 238, 0.589), inset -4px -4px 8px rgba(155, 155, 155, 0.35);
+}
+
+.btn-connect:hover {
+  background-position: right top;
+}
+
+.btn-connect:is(:focus, :focus-visible, :active) {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-connect {
+    transition: linear;
+  }
+}
