@@ -60,6 +60,6 @@ $_SESSION['userData'] = [
     'avatar'=>$userData['avatarmedium'],
 ];
 
-$redirect_url = "http://localhost:5173/home";
+$redirect_url = getenv('VITE_FRONTEND_URL') . "/home";
 header("Location: $redirect_url"); 
 exit();

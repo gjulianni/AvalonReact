@@ -1,11 +1,14 @@
 <?php
-// Headers para permitir o CORS e definir o método permitido
 header('Content-Type: application/json');
-header("Access-Control-Allow-Origin: http://localhost:5173");
+$allowed_origin = 'http://localhost:5173'; // Para desenvolvimento local
+
+// Se o seu frontend estiver em um domínio diferente na produção, adicione aqui
+// Exemplo: $allowed_origin = 'https://seu_dominio.com'; 
+
+header("Access-Control-Allow-Origin: $allowed_origin");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Access-Control-Allow-Credentials: true");
-
 
 session_start();
 

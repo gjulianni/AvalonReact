@@ -16,13 +16,13 @@ interface ServerResponse {
 const Tracker: React.FC = () => {
     const [serverInfo, setServerInfo] = useState<SafeServerInfo | null>(null);
     const [thumbnailUrl, setThumbnailUrl] = useState<string | null>(null);
-    const serverIp = '131.196.196.198'; // Substitua pelo IP real do seu servidor
-    const serverPort = '27200'; // Substitua pela porta real do seu servidor
+    const serverIp = '131.196.196.198'; 
+    const serverPort = '27200'; 
 
     useEffect(() => {
         const fetchServerInfo = async () => {
             try {
-                const response = await fetch(`http://192.168.15.15:3030/server-info?serverIp=${serverIp}&serverPort=${serverPort}`);
+                const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/server-info?serverIp=${serverIp}&serverPort=${serverPort}`);
                 if (!response.ok) {
                     throw new Error('Erro ao obter informações do servidor');
                 }
