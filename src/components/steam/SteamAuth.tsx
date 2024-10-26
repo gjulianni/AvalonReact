@@ -6,7 +6,7 @@ const SteamAuth: React.FC = () => {
     return (
         <>
            <div className="steamlogon">
-           <a href={`${import.meta.env.VITE_PHP_BACKEND_URL}/steamauth/init-openId.php`} className="btn-login-steam">
+           <a href={`http://avalonservers.rf.gd/backend/steamauth/init-openId.php`} className="btn-login-steam">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/512px-Steam_icon_logo.svg.png" 
                     style={{ width: '30px', marginRight: '10px' }} />
                     <SteamInfo />

@@ -1,9 +1,8 @@
 <?php
 header('Content-Type: application/json');
-$allowed_origin = 'http://localhost:5173'; // Para desenvolvimento local
+$allowed_origin = 'http://avalonservers.rf.gd'; // Para produção
 
-// Se o seu frontend estiver em um domínio diferente na produção, adicione aqui
-// Exemplo: $allowed_origin = 'https://seu_dominio.com'; 
+
 
 header("Access-Control-Allow-Origin: $allowed_origin");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");

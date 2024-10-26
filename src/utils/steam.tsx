@@ -10,7 +10,7 @@ const SteamInfo: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_PHP_BACKEND_URL}/steamauth/dashboard.php`, {
+        const response = await fetch(`http://avalonservers.rf.gd/backend/steamauth/dashboard.php`, {
           credentials: 'include'  // Habilitar envio de cookies
         });
 
@@ -35,7 +35,7 @@ const SteamInfo: React.FC = () => {
                 <img src="${data.avatar}" style="width: 45px; height: 45px; border-radius: 50px; position: relative; right: 3.2%;" alt="Avatar"/>
                 <span class="username">${data.username}</span>
               </div>
-              <a href="${import.meta.env.VITE_PHP_BACKEND_URL}/steamauth/logout.php" style="color: red; font-weight: 300; text-decoration: none; margin-left: 10px;">Logout</a>
+              <a href="http://avalonservers.rf.gd/backend/steamauth/logout.php" style="color: red; font-weight: 300; text-decoration: none; margin-left: 10px;">Logout</a>
             `;
           }
         }

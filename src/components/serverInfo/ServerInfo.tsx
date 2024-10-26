@@ -40,6 +40,9 @@ const ServerInfo: React.FC = () => {
     if(error) {
 
     }
+    if(!serverInfo) {
+        
+    }
 
     return null;
 };
