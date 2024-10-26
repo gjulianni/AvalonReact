@@ -1,0 +1,100 @@
+.vip-container {
+  
+  min-height: 70vh;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+#card-vip {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(37, 36, 36);
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+.card-vip-content {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#img-vip-avalon {
+  width: 100px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.vipcard-titles {
+  display: flex;
+  flex-direction: column;
+}
+
+#title-vip {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 0;
+}
+
+#description-vip {
+  font-size: 16px;
+  color: #ccc;
+  margin-top: 8px;
+}
+
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.benefit-marker {
+  margin-right: 10px;
+  font-size: 20px;
+  color: #FFD700;
+}
+
+#price-vip {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+#buy-button-vip {
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+}
+
+
+
+
+#vip-title-h1 {
+  color: #fff;
+  font-size: 60px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  
+  margin-bottom: 40px;
+}
