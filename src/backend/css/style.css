@@ -1,0 +1,142 @@
+
+
+.header {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	width: 100%;
+	flex-direction: row;
+	margin-top: 30px;
+	
+}
+
+.header > h2 {
+  font-size: 50px;
+}
+
+
+.card-title item-name {
+	text-align:center;
+	font-weight: bold;
+}
+
+.skin-image {
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+	width: 50%;
+	border-bottom: solid 1px #eee;
+}
+
+.btn-login-steam {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 20px;
+    overflow: hidden;
+    position: relative;
+    width: 250px; 
+	justify-content: center;
+    transition: width 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    white-space: nowrap;
+    margin-top: 20px;
+    margin-left: 35%;
+  }
+
+  .username {
+    color: #fff; 
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+  .btn-login-steam:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6); /* Efeito glow */
+    display: flex;
+    justify-content: center;
+	transform: scale(1.02);
+  }
+  
+  
+  .btn-text {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    
+  }
+  
+  .btn-login-steam:hover .btn-text {
+    opacity: 1;
+  }
+
+  .btn-logout-steam {
+
+	display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: red;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 20px;
+    overflow: hidden;
+    position: relative;
+    width: 250px; 
+	justify-content: center;
+    margin-top: 20px;
+    margin-left: 25%;
+  }
+
+  .bg-primary {
+	padding: 15px;
+}
+
+.card-title item-name {
+	text-align:center;
+	font-weight: bold;
+}
+
+.skin-image {
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+	width: 50%;
+	border-bottom: solid 1px #eee;
+}
+
+.card {
+	background: linear-gradient(rgba(4, 2, 8, 0.60),rgba(0,0,0,0.6));
+	border: 1px solid #fff;
+	gap: 50px;
+	
+}
+
+.card-body {
+	background: linear-gradient(rgba(4, 2, 8, 0.60),rgba(0,0,0,0.6))
+
+}
+
+.card-footer {
+	background: linear-gradient(rgba(4, 2, 8, 0.60),rgba(0,0,0,0.6))
+}
+
+.card-group {
+    display: flex;
+    flex-wrap: wrap;
+	justify-content: center;
+    gap: 20px; 
+}
+
+@media (max-width: 576px) { 
+    .card-group {
+        flex-direction: column; 
+    }
+    
+    .card {
+        width: 100%; 
+        min-height: 250px; 
+    }
+}

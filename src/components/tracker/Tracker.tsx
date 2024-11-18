@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import './Tracker.css';
+import './Tracker.css'
 
 interface SafeServerInfo {
     name: string;
@@ -19,10 +19,14 @@ const Tracker: React.FC = () => {
     const serverIp = '131.196.196.198'; 
     const serverPort = '27200'; 
 
+    const connectToServer = () => {
+        window.location.href = "steam://connect/131.196.196.198:27200";
+    };
+
     useEffect(() => {
         const fetchServerInfo = async () => {
             try {
-                const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/server-info?serverIp=${serverIp}&serverPort=${serverPort}`);
+                const response = await fetch(`https://malachite-bloom-bayberry.glitch.me/server-info?serverIp=${serverIp}&serverPort=${serverPort}`);
                 if (!response.ok) {
                     throw new Error('Erro ao obter informações do servidor');
                 }
@@ -50,9 +54,9 @@ const Tracker: React.FC = () => {
                                 <p id="current-map">Mapa Atual: {serverInfo.map}</p>
                                 <p id="players">Jogadores: {serverInfo.players}/{serverInfo.maxPlayers}</p>
                                 <p id="ip">IP: {serverIp}:{serverPort}</p>
-                                <form action={`steam://connect/${serverIp}:${serverPort}`}>
-                                    <button className="btn-connect" type="button">► Jogar</button>
-                                </form>
+                               
+                                    <button className="btn-connect" type="button" onClick={connectToServer}>► Jogar</button>
+                                
                             </>
                         ) : (
                             <p>Carregando informações do servidor...</p>

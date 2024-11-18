@@ -40,7 +40,7 @@ const Snowfall: React.FC = () => {
     const canvasHeight = canvas.height;
     
     
-    for (let i = 0; i < 80; i++) {
+    for (let i = 0; i < 90; i++) {
       snowflakes.push(new Snowflake(canvasWidth, canvasHeight));
     }
 

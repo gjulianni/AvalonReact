@@ -1,0 +1,203 @@
+.nav {
+    background-color: transparent;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 25px;
+    margin: 0;
+  }
+  
+  .logo {
+    display: none;
+  }
+  
+  .socials {
+    position: absolute;
+    right: 0;
+    margin-right: 40px;
+  }
+  
+  .steam-login {
+    position: absolute;
+    left: 0;
+    margin-left: 40px;
+  }
+  
+  .nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 100000;
+    margin-right: 150px;
+  }
+  
+  .nav ul li {
+    margin-left: 140px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 200;
+    position: relative;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  
+  .nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .nav ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #ffffff;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.4s;
+  }
+  
+  .nav ul li:hover::after {
+    width: 100%;
+  }
+  
+  .nav ul li:nth-child(4), .nav ul li:nth-child(2)
+  {
+    color: #fff;
+    text-shadow: 0 0 1px #e6e5e7,
+                 0 0 1px #e6e5e7,
+                 0 0 1px #e6e5e7,
+                 0 0 1px #e6e5e7,
+                 0 0 1px rgb(246, 245, 248);
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 1px #fff, 0 0 5px #fff, 0 0 1px #fff, 0 0 2px #fff, 0 0 1px #fff, 0 0 1px #fff, 0 0 2px #fff;
+    }
+    to {
+      text-shadow: 0 0 2px #fff, 0 0 10px #fff, 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 2px #fff, 0 0 2px #fff;
+    }
+  }
+  
+  .checkbtn {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    display: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+  
+  #check {
+    display: none;
+  }
+  
+  @media (max-width: 1200px) {
+    .nav {
+      justify-content: end;
+    }
+  
+    .nav ul {
+      margin-right: 10%;
+    }
+  }
+  
+  @media (max-width: 1060px) {
+    .nav ul {
+      margin-right: 15%;
+    }
+  
+    .nav ul li {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 872px) {
+    .checkbtn {
+      display: block;
+      order: 1;
+      z-index: 99999999999999999999999;
+    }
+  
+    .steamlogon {
+      position: absolute;
+      left: 0;
+      transform: translateY(130%);
+      margin-left: 25px;
+    }
+  
+    .logo {
+      font-size: 3rem;
+      font-family: 'Roboto', sans-serif;
+      position: absolute;
+      left: 0;
+      margin-left: 30px;
+      cursor: pointer;
+      display: block;
+    }
+  
+    .nav ul {
+      position: fixed;
+      top: 0px;
+      right: -100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(10px);
+      color: white;
+      width: 50%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s;
+      margin-right: 0;
+    }
+    .nav ul.open {
+      right: 0; 
+    }
+  
+    .nav ul li {
+      margin: 40px 0;
+    }
+  
+    .nav ul li a {
+      font-size: 20px;
+    }
+  
+    
+  }
+  
+  @media (max-width: 500px) {
+    .logo {
+      font-size: 2.5rem;
+    }
+  }
+  
+  @media (max-width: 390px) {
+    .logo {
+      font-size: 2.5rem;
+    }
+  }
+  
+  @media (max-width: 380px) {
+    .logo {
+      font-size: 2.5rem;
+    }
+  }
+  
+  @media (max-width: 289px) {
+    .logo {
+      font-size: 2.5rem;
+      margin-left: 10px;
+    }
+  }

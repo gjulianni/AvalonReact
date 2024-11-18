@@ -35,6 +35,11 @@ const Nav: React.FC = () => {
           <li onClick={handleVipClick}>VIP</li>
           <li onClick={() => scrollToSection('tracker')}>Servers</li>
           <li onClick={handleModelsClick}>Player Models</li>
+          <li>
+            <a href="https://avalonservers.rf.gd/backend/index.php">
+              Weapon Skins
+            </a>
+          </li>
         </ul>
       </nav>
     </>

@@ -14,7 +14,7 @@ const ServerInfo: React.FC = () => {
     useEffect(() => {
         const fetchServerInfo = async () => {
             try {
-                const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/server-info?serverIp=131.196.196.198&serverPort=27200`);
+                const response = await fetch(`https://malachite-bloom-bayberry.glitch.me/server-info?serverIp=131.196.196.198&serverPort=27200`);
                 if (!response.ok) {
                     throw new Error('Erro ao obter informações do servidor');
                 }
@@ -41,7 +41,7 @@ const ServerInfo: React.FC = () => {
 
     }
     if(!serverInfo) {
-        
+
     }
 
     return null;

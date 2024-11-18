@@ -7,6 +7,10 @@ import Tracker from '../tracker/Tracker';
 import ServerInfo from '../serverInfo/ServerInfo';
 import Footer from '../footer/Footer';
 
+const connectToServer = () => {
+    window.location.href = "steam://connect/131.196.196.198:27200";
+};
+
 export default function Home() {
 
     return (
@@ -25,9 +29,9 @@ export default function Home() {
         <h1>AVALON</h1>
         <p>Servidores brasileiros de Counter-Strike 2</p>
 
-        <form action="steam://connect/131.196.196.198:27200"> 
-            <button type="submit" className="btn-conectar"><span></span>► Conectar</button>
-            </form>
+            
+            <button type="submit" className="btn-conectar" onClick={connectToServer}><span></span>► Conectar</button>
+            
         </section>
         </div> 
 

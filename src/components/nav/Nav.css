@@ -30,11 +30,11 @@
   padding: 0;
   margin: 0;
   z-index: 100000;
-  margin-right: 150px;
+  margin-right: 80px;
 }
 
 .nav ul li {
-  margin-left: 140px;
+  margin-left: 80px;
   font-family: 'Inter', sans-serif;
   font-size: 1.3rem;
   font-weight: 200;
@@ -120,7 +120,7 @@
   }
 }
 
-@media (max-width: 872px) {
+@media (max-width: 1200px) {
   .checkbtn {
     display: block;
     order: 1;

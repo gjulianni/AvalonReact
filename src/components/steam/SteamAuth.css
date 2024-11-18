@@ -1,65 +1,109 @@
 .steamlogon {
 
-    position: absolute;
-    right: 0;
-    margin-right: 20px;
-    top: 0;
-    margin-top: 15px;
-  }
-  
-  .btn-login-steam {
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    border: 1px solid #fff;
-    background-color: transparent;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 20px;
-    overflow: hidden;
-    position: relative;
-    width: 25px; 
-    transition: width 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    white-space: nowrap;
-    
-    
-  }
-
-  .infos {
-    display: flex;
-    align-items: center; 
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  top: 0;
+  margin-top: 20px;
 }
 
-.infos img {
-    width: 45px; 
-    height: 45px; 
-    border-radius: 50px; 
-    margin-right: 10px; 
+.btn-login-steam {
+  display: flex;
+  align-items: center;
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 20px;
+  width: 65px; /* Tamanho inicial para mostrar o avatar */
+  transition: width 0.3s ease, box-shadow 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 7px; /* Remove padding para garantir ajuste perfeito */
+ 
 }
+
+.btn-text {
+  margin-left: 20px;
+}
+
+
+
+
+.btn-login-steam:hover {
+  width: 220px; /* Expande para mostrar conteúdo completo */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+  overflow-x: auto;
+}
+
+/* Avatar fica fixo à esquerda */
+.btn-avatar {
+  flex: none; /* Mantém tamanho fixo */
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.btn-avatar img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+/* Conteúdo expansível com nome e logout */
+.btn-content {
+display: flex;
+align-items: center;
+padding-left: 10px;
+transition: opacity 0.3s ease;
+scrollbar-width: thin; 
+}
+
+.btn-login-steam:hover .btn-content {
+  opacity: 1; /* Mostra o conteúdo */
+}
+
+.btn-login-steam:hover::-webkit-scrollbar {
+height: 5px; /* Altura da barra de rolagem horizontal */
+}
+
+.btn-login-steam:hover::-webkit-scrollbar-track {
+background: transparent; /* Define fundo transparente para o track */
+border-radius: 10px;
+}
+
+.btn-login-steam:hover::-webkit-scrollbar-thumb {
+background-color: rgba(207, 207, 207, 0.986); /* Cor do "polegar" da barra */
+border-radius: 10px;
+cursor: pointer;
+}
+
+.btn-login-steam:hover::-webkit-scrollbar-thumb:hover {
+background-color: rgba(255, 255, 255, 0.932); /* Cor do "polegar" ao passar o mouse */
+}
+
+.btn-login-steam:hover::-webkit-scrollbar-button {
+display: none; /* Oculta os botões de rolagem */
+}
+
 
 .username {
-    color: #fff; 
-    vertical-align: middle;
-    margin-right: 5px;
+  color: #fff;
+  margin-right: 10px;
 }
 
-  .btn-login-steam:hover {
-    width: 330px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6); /* Efeito glow */
-    display: flex;
-    justify-content: center;
-  }
-  
-  
-  .btn-text {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    
-  }
-  
-  .btn-login-steam:hover .btn-text {
-    opacity: 1;
-  }
+.logout-link {
+  color: red;
+  font-weight: 300;
+  text-decoration: none;
+}
 
 
+
+@media (max-width: 1440px) {
+.steamlogon {
+  margin-top: 5%; 
+}
+
+}
