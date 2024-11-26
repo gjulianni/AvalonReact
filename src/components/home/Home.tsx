@@ -4,7 +4,6 @@ import Nav from '../nav/Nav';
 import './Home.css'
 import SteamAuth from '../steam/SteamAuth';
 import Tracker from '../tracker/Tracker';
-import ServerInfo from '../serverInfo/ServerInfo';
 import Footer from '../footer/Footer';
 
 const connectToServer = () => {
@@ -35,8 +34,7 @@ export default function Home() {
         </section>
         </div> 
 
-        <Tracker />
-        <ServerInfo />
+        <Tracker /> 
         <Footer  />
         </>
     )

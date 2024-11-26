@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './Tracker.css'
 
-interface SafeServerInfo {
+interface serverInfo {
     name: string;
     map: string;
     players: number;
@@ -9,12 +9,12 @@ interface SafeServerInfo {
 }
 
 interface ServerResponse {
-    safeServerInfo: SafeServerInfo;
+    serverInfo: serverInfo;
     thumbnailUrl: string;
 }
 
 const Tracker: React.FC = () => {
-    const [serverInfo, setServerInfo] = useState<SafeServerInfo | null>(null);
+    const [serverInfo, setServerInfo] = useState<serverInfo | null>(null);
     const [thumbnailUrl, setThumbnailUrl] = useState<string | null>(null);
     const serverIp = '131.196.196.198'; 
     const serverPort = '27200'; 
@@ -26,14 +26,14 @@ const Tracker: React.FC = () => {
     useEffect(() => {
         const fetchServerInfo = async () => {
             try {
-                const response = await fetch(`https://malachite-bloom-bayberry.glitch.me/server-info?serverIp=${serverIp}&serverPort=${serverPort}`);
+                const response = await fetch(`https://malachite-bloom-bayberry.glitch.me/server-info/zombieEscape`);
                 if (!response.ok) {
                     throw new Error('Erro ao obter informações do servidor');
                 }
                 const data: ServerResponse = await response.json();
-                setServerInfo(data.safeServerInfo);
+                console.log('Dados recebidos:', data);
+                setServerInfo(data.serverInfo);
                 setThumbnailUrl(data.thumbnailUrl);
-                // console.log(data);
             } catch (error) {
                 console.error('Erro ao buscar informações do servidor:', error);
             }
@@ -41,6 +41,13 @@ const Tracker: React.FC = () => {
 
         fetchServerInfo();
     }, []);
+    useEffect(() => {
+        if (serverInfo) {
+            console.log("serverInfo atualizado:", serverInfo);
+        } else {
+            console.log('aaaaaaaaaaaaaaaaaa')
+        }
+    }, [serverInfo]);
 
     return (
         <>

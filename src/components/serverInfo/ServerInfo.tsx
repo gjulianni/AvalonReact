@@ -14,16 +14,16 @@ const ServerInfo: React.FC = () => {
     useEffect(() => {
         const fetchServerInfo = async () => {
             try {
-                const response = await fetch(`https://malachite-bloom-bayberry.glitch.me/server-info?serverIp=131.196.196.198&serverPort=27200`);
+                const response = await fetch(`https://malachite-bloom-bayberry.glitch.me/server-info/zombieEscape`);
                 if (!response.ok) {
                     throw new Error('Erro ao obter informações do servidor');
                 }
                 const data = await response.json();
                 setServerInfo({
-                    name: data.name,
-                    map: data.map,
-                    players: data.players,
-                    maxPlayers: data.maxPlayers,
+                    name: data.serverInfo.name,
+                    map: data.serverInfo.map,
+                    players: data.serverInfo.players,
+                    maxPlayers: data.serverInfo.maxPlayers,
                 });
             } catch (err) {
                 if (err instanceof Error) {
@@ -41,7 +41,7 @@ const ServerInfo: React.FC = () => {
 
     }
     if(!serverInfo) {
-
+        console.log("nao tem nada")
     }
 
     return null;
