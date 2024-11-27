@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+.yt-uix-sessionlink {
+    display: none;
+  }
+  
+  /* Se ainda aparecer o título, você pode usar isso */
+  .ytp-title {
+    display: none;
+  }
+
+  .ytp-chrome-bottom,
+.ytp-title,
+.ytp-play-button,
+.ytp-pause-button,
+.ytp-progress-bar,
+.ytp-time-display {
+  display: none !important;
+}
+
+/* Esconde o título do vídeo também no hover */
+.yt-uix-sessionlink,
+.ytp-title,
+.ytp-subtitles-button,
+.ytp-fullscreen-button,
+.ytp-settings-button {
+  display: none !important;
+}
+
+/* Impede a exibição de controles e título durante o hover */
+.video-container:hover .ytp-chrome-bottom {
+  display: none !important;
+}
+
+
+.video-container {
+    display: flex; /* Usa Flexbox para dispor os itens horizontalmente */
+    justify-content: space-between; /* Espaça os itens igualmente entre a esquerda e a direita */
+    align-items: flex-start; /* Alinha os itens ao topo */
+    flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha em telas pequenas */
+    color: #fff;
+    width: 70%;
+    background-color: rgb(14, 14, 14);
+    padding: 20px;
+    opacity: 0;
+    transition: opacity .5s ease-out;
+  }
+
+  .video-container.visible {
+    animation: slideUp 0.5s ease-out forwards; /* Ativa a animação quando visível */
+  }
+  
+  .text-content {
+    flex: 1; /* Ocupa o espaço restante da tela */
+    margin-right: 20px; /* Espaço entre o texto e o vídeo */
+    display: flex;
+    flex-direction: column; /* Organiza os elementos do texto em coluna */
+    gap: 10px; /* Espaçamento entre os itens da coluna */
+    max-width: 50%;
+    font-size: 24px;
+    font-family: 'Lato', sans-serif;
+  }
+
+  .text-content > p {
+    margin: 0;
+  }
+  
+  .video-wrapper {
+    flex: 0 0 50%; /* O vídeo ocupa 50% do espaço da tela, mas não será redimensionado */
+    max-width: 700px; /* Definindo um tamanho máximo para o vídeo */
+  }
+
+  .btn {
+    background-color: #fff; 
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s ease;
+  }
+  .button-container > button{
+        margin-right: 15px;
+        margin-top: 15px;
+  }
+  
+  .btn:hover {
+    background-color: rgb(26, 26, 26);
+    color: #fff; 
+  }
+  
+  @media (max-width: 768px) {
+    .video-container {
+      flex-direction: column; /* Em telas pequenas, empilha o texto e o vídeo */
+      align-items: center; /* Centraliza o conteúdo */
+    }
+  
+    .video-wrapper {
+      max-width: 100%; /* O vídeo ocupará toda a largura disponível em telas pequenas */
+    }
+  }
+
+
+  @keyframes slideUp {
+    0% {
+      opacity: 0; 
+      transform: translateY(20px); 
+    }
+    100% {
+      opacity: 1; /* Elemento completamente visível no final */
+      transform: translateY(0); /* Elemento na posição original */
+    }
+  }

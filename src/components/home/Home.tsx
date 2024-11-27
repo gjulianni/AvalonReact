@@ -5,6 +5,7 @@ import './Home.css'
 import SteamAuth from '../steam/SteamAuth';
 import Tracker from '../tracker/Tracker';
 import Footer from '../footer/Footer';
+import VideoLoop from '../homecard/HomeCard';
 
 const connectToServer = () => {
     window.location.href = "steam://connect/131.196.196.198:27200";
@@ -35,6 +36,9 @@ export default function Home() {
         </div> 
 
         <Tracker /> 
+        <section className='video-section'>
+        <VideoLoop />
+        </section>
         <Footer  />
         </>
     )

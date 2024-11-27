@@ -1,3 +1,28 @@
+.rules-container::-webkit-scrollbar {
+  width: 10px; /* Largura da barra de rolagem */
+}
+
+/* Estilo do "thumb" (a parte da barra de rolagem que você pode arrastar) */
+.rules-container::-webkit-scrollbar-thumb {
+  background-color: #ffffff; /* Cor de fundo do thumb */
+  border-radius: 10px; /* Bordas arredondadas */
+  cursor: pointer;
+}
+
+/* Estilo quando o usuário passa o mouse sobre o thumb */
+.rules-container::-webkit-scrollbar-thumb:hover {
+  background-color: #d4d4d4; /* Cor do thumb quando em hover */
+}
+
+/* Estilo da parte vazia da barra de rolagem */
+.rules-container::-webkit-scrollbar-track {
+  background: #646464; /* Cor de fundo da pista de rolagem */
+  border-radius: 10px; /* Bordas arredondadas */
+}
+
+
+
+
 .server-models {
     display: flex;
     flex-direction: column;
@@ -80,6 +105,13 @@
     .custom-button {
         width: 170px;
         height: 100px;
+        margin-top: 30px;
+    }
+  }
+  @media (max-width: 380px) {
+    .custom-button {
+      width: 140px;
+      height: 70px;
     }
   }
   
@@ -101,7 +133,43 @@
     width: 100%;
   }
 
-  
+  .tracking-image {
+    transition: all 0.3s ease-in-out; /* Animação suave */
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .tracking-image {
+      background-size: auto 100%; 
+      background-position: left center; 
+      
+  }
+  .infos-servers > p{
+    font-size: 18px;
+    margin: 5px;
+  }
+  .infos-servers > h3 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 550px) {
+  .infos-servers > h3 {
+    font-size: 18px;
+  }
+  .infos-servers > p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+    .tracking-image {
+        background-size: auto; /* Quando a tela for bem pequena, a imagem irá encolher para se ajustar */
+        background-position: left top; /* A imagem vai se alinhar à parte superior esquerda */
+        width: 100%;  /* A imagem ocupará 100% da largura do contêiner */
+        
+    }
+}
   
   .tracking-container,
   .description-container,
@@ -128,6 +196,24 @@
   text-align: left; 
   width: 100%;
 
+  }
+
+  .description-container {
+    position: relative;
+    
+  }
+
+  .texts-description {
+      font-size: 20px;
+  }
+
+  .description-container-img {
+    float: right;
+  }
+
+  .description-container-img > img {
+    width: 173px;
+    height: 173px;
   }
 
   .tracking-container {
@@ -190,4 +276,110 @@
   p {
     line-height: 1.5;
     white-space: pre-wrap; /* Para preservar quebras de linha nas regras */
+  }
+
+  .tracking-side-options {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: red;
+    z-index: 99999999999999999999999999;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .connect-to-server {
+    background-color: yellow;
+    border: none;
+    outline: none;
+    color: #01468f;
+    margin: 10px;
+    font-size: 30px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: .3s ease transform;
+  }
+
+
+  .connect-to-server:hover {
+    transform: scale(1.1);
+  }
+
+  .connect-to-server.copied {
+    background-color: #32cd32; /* Verde claro */
+    color: white;
+}
+
+.checkmark-icon {
+    position: absolute;
+    bottom: -10px; /* Começa abaixo do botão */
+    left: 35%;
+    transform: translateX(-40%);
+    width: 40px;
+    height: 40px;
+    animation: slide-up .3s forwards; /* Animação do checkmark */
+}
+
+@keyframes slide-up {
+    0% {
+        bottom: -15px; /* Começa fora da tela */
+        opacity: 0;
+    }
+    100% {
+        bottom: 1px; /* Posição final dentro do botão */
+        opacity: 1;
+    }
+}
+
+.connect-to-server.copied .icon-original {
+    opacity: 0; /* Torna o ícone original invisível durante a animação */
+}
+
+/* Animação de fundo do botão (para mudar para verde claro) */
+.connect-to-server.copied {
+    animation: backgroundChange .5s forwards;
+}
+
+@keyframes backgroundChange {
+    0% {
+        background-color: yellow;
+
+    }
+    100% {
+        background-color: #32cd32; 
+    }
+}
+
+  
+
+
+  .tracking-side-options .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tracking-side-options .tooltip .tooltip-text {
+    visibility: hidden;
+    width: 160px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 4px;
+  
+
+    position: absolute;
+    bottom: 15%; 
+    left: -130%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+  }
+  
+  .tracking-side-options .tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
   }

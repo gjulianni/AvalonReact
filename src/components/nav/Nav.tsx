@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
-import { scrollToSection } from '../../utils/smoothscroll';
 import './Nav.css'
 
 const Nav: React.FC = () => {
@@ -18,6 +17,10 @@ const Nav: React.FC = () => {
   const handleVipClick = () => {
     navigate('/vip');
   };
+  const handleServersClick = () => {
+    navigate('/servers');
+    window.scrollTo(0, 0);
+  }
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -33,7 +36,7 @@ const Nav: React.FC = () => {
         <ul className={isSidebarOpen ? 'open' : ''}>
           <li onClick={handleHomeClick}>Home</li>
           <li onClick={handleVipClick}>VIP</li>
-          <li onClick={() => scrollToSection('tracker')}>Servers</li>
+          <li onClick={handleServersClick}>Servers</li>
           <li onClick={handleModelsClick}>Player Models</li>
           <li>
             <a href="https://avalonservers.rf.gd/backend/index.php">
