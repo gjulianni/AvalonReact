@@ -36,12 +36,12 @@ const ServerModels: React.FC = () => {
         const fetchServerInfo = async () => {
             try {
                 const response = await fetch(`https://malachite-bloom-bayberry.glitch.me/server-info/${selectedMode}`);
-                console.log(response)
+                // console.log(response)
                 if (!response.ok) {
                     throw new Error('Erro ao obter informações do servidor');
                 }
                 const data: ServerResponse = await response.json();
-                console.log('Dados recebidos:', data);
+                // console.log('Dados recebidos:', data);
                 setServerInfo(data.serverInfo);
                 setThumbnailUrl(data.thumbnailUrl);
             } catch (error) {

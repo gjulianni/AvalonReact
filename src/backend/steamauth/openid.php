@@ -12,7 +12,7 @@
  * @license     http://opensource.org/licenses/mit-license.php  MIT License
  */
 
- $allowed_origin = 'https://avalonservers.rf.gd';
+ $allowed_origin = 'https://avalonservers.site';
 header("Access-Control-Allow-Origin: $allowed_origin");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Credentials: true");
@@ -54,7 +54,7 @@ class LightOpenID
             $this->set_proxy($proxy);
     
             // Define a URL de retorno
-            $this->returnUrl = 'https://avalonservers.rf.gd/backend/index.php'; // URL correta sem a porta 5173
+            $this->returnUrl = 'https://avalonservers.site/backend/index.php'; // URL correta sem a porta 5173
     
             $uri = rtrim(preg_replace('#((?<=\?)|&)openid\.[^&]+#', '', $_SERVER['REQUEST_URI']), '?');
             $this->returnUrl = $this->trustRoot . $uri;

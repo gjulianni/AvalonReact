@@ -39,7 +39,7 @@ const Nav: React.FC = () => {
           <li onClick={handleServersClick}>Servers</li>
           <li onClick={handleModelsClick}>Player Models</li>
           <li>
-            <a href="https://avalonservers.rf.gd/backend/index.php">
+            <a href="https://avalonservers.site/backend/index.php">
               Weapon Skins
             </a>
           </li>

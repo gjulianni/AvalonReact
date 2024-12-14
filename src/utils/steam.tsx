@@ -10,7 +10,7 @@ const SteamInfo: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://avalonservers.rf.gd/backend/steamauth/userInfo.php`, {
+        const response = await fetch(`https://avalonservers.site/backend/steamauth/userInfo.php`, {
           credentials: 'include'  // Habilitar envio de cookies
         });
 
@@ -39,7 +39,7 @@ const SteamInfo: React.FC = () => {
                 <div class="btn-content">
                     <span class="username">${data.personaname}</span>
                 </div>
-                <a href="https://avalonservers.rf.gd/backend/index.php?logout" style="color: red; font-weight: 300; text-decoration: none; margin-left: 10px;">Logout</a>
+                <a href="https://avalonservers.site/backend/index.php?logout" style="color: red; font-weight: 300; text-decoration: none; margin-left: 10px;">Logout</a>
               `;
               botaoAccount.addEventListener('mouseleave', () => {
                 botaoAccount.scrollLeft = 0; 

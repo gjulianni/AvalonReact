@@ -97,10 +97,10 @@ if (isset($_SESSION['steamid'])) {
 		</button>
 		<label class='logo'>Avalon</label>
 		<ul id='navMenu'>
-			<li><a href='https://avalonservers.rf.gd/home'>Home</a></li>
-			<li><a href='https://avalonservers.rf.gd/vip'>VIP</a></li>
-			<li><a href='#' onclick=\"scrollToSection('tracker')\">Servers</a></li>
-			<li><a href='https://avalonservers.rf.gd/models'>Player Models</a></li>
+			<li><a href='../'>Home</a></li>
+			<li><a href='/vip'>VIP</a></li>
+			<li><a href='/servers'>Servers</a></li>
+			<li><a href='/models'>Player Models</a></li>
 		</ul>
 	</nav>";
 		echo "<div class='header'><h2>Por favor, faça login para prosseguir: ";
@@ -115,10 +115,10 @@ if (isset($_SESSION['steamid'])) {
 		</button>
 		<label class='logo'>Avalon</label>
 		<ul id='navMenu'>
-			<li><a href='https://avalonservers.rf.gd/home'>Home</a></li>
-			<li><a href='https://avalonservers.rf.gd/vip'>VIP</a></li>
-			<li><a href='#' onclick=\"scrollToSection('tracker')\">Servers</a></li>
-			<li><a href='https://avalonservers.rf.gd/models'>Player Models</a></li>
+			<li><a href='../'>Home</a></li>
+			<li><a href='/vip'>VIP</a></li>
+			<li><a href='/servers'>Servers</a></li>
+			<li><a href='/models'>Player Models</a></li>
 		</ul>
 	</nav>";
 echo "<div class='header'><h2>Selecione as skins que você deseja: <a class='btn-logout-steam' href='{$_SERVER['PHP_SELF']}?logout'>Logout</a></h2></div>";

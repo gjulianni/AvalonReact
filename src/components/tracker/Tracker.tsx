@@ -31,7 +31,7 @@ const Tracker: React.FC = () => {
                     throw new Error('Erro ao obter informações do servidor');
                 }
                 const data: ServerResponse = await response.json();
-                console.log('Dados recebidos:', data);
+                // console.log('Dados recebidos:', data);
                 setServerInfo(data.serverInfo);
                 setThumbnailUrl(data.thumbnailUrl);
             } catch (error) {
@@ -43,9 +43,9 @@ const Tracker: React.FC = () => {
     }, []);
     useEffect(() => {
         if (serverInfo) {
-            console.log("serverInfo atualizado:", serverInfo);
+            // console.log("serverInfo atualizado:", serverInfo);
         } else {
-            console.log('aaaaaaaaaaaaaaaaaa')
+            // console.log('aaaaaaaaaaaaaaaaaa')
         }
     }, [serverInfo]);
 

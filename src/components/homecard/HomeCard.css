@@ -34,42 +34,72 @@
 
 
 .video-container {
-    display: flex; /* Usa Flexbox para dispor os itens horizontalmente */
-    justify-content: space-between; /* Espaça os itens igualmente entre a esquerda e a direita */
-    align-items: flex-start; /* Alinha os itens ao topo */
-    flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha em telas pequenas */
-    color: #fff;
-    width: 70%;
-    background-color: rgb(14, 14, 14);
-    padding: 20px;
-    opacity: 0;
-    transition: opacity .5s ease-out;
-  }
+  display: flex; /* Organiza itens lado a lado */
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Permite quebra de linha em telas pequenas */
+  color: #fff;
+  min-width: 70%;
+  background-color: rgb(14, 14, 14);
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
 
-  .video-container.visible {
-    animation: slideUp 0.5s ease-out forwards; /* Ativa a animação quando visível */
+.video-container.visible {
+  animation: slideUp 0.4s ease-out forwards;
+}
+
+.text-content {
+  flex: 1; /* Texto ocupa espaço restante */
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  max-width: 50%;
+  font-size: 24px;
+  font-family: 'Lato', sans-serif;
+}
+
+.text-content > p {
+  margin-bottom: 5px;
+}
+
+.video-wrapper {
+  flex: 0 0 45%; /* Garante que o vídeo fique à direita e ocupe até 45% da largura */
+  max-width: 640px; /* Limite máximo para o vídeo */
+  aspect-ratio: 16 / 9; /* Proporção 16:9 para responsividade */
+  position: relative; /* Necessário para iframe responsivo */
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1540px) {
+  .video-container {
+    flex-direction: column; /* Empilha texto e vídeo verticalmente */
+    align-items: center;
+   
   }
   
+
   .text-content {
-    flex: 1; /* Ocupa o espaço restante da tela */
-    margin-right: 20px; /* Espaço entre o texto e o vídeo */
-    display: flex;
-    flex-direction: column; /* Organiza os elementos do texto em coluna */
-    gap: 10px; /* Espaçamento entre os itens da coluna */
-    max-width: 50%;
-    font-size: 24px;
-    font-family: 'Lato', sans-serif;
+    max-width: 100%;
+    margin-right: 0;
   }
 
-  .text-content > p {
-    margin: 0;
-  }
-  
   .video-wrapper {
-    flex: 0 0 50%; /* O vídeo ocupa 50% do espaço da tela, mas não será redimensionado */
-    max-width: 700px; /* Definindo um tamanho máximo para o vídeo */
+    flex: none;
+    width: 100%;
+    margin-top: 20px;
   }
-
+}
   .btn {
     background-color: #fff; 
     border: none;
@@ -82,6 +112,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: .3s ease;
+    margin-top: 15px;
   }
   .button-container > button{
         margin-right: 15px;
@@ -93,22 +124,13 @@
     color: #fff; 
   }
   
-  @media (max-width: 768px) {
-    .video-container {
-      flex-direction: column; /* Em telas pequenas, empilha o texto e o vídeo */
-      align-items: center; /* Centraliza o conteúdo */
-    }
   
-    .video-wrapper {
-      max-width: 100%; /* O vídeo ocupará toda a largura disponível em telas pequenas */
-    }
-  }
 
 
   @keyframes slideUp {
     0% {
       opacity: 0; 
-      transform: translateY(20px); 
+      transform: translateY(30px); 
     }
     100% {
       opacity: 1; /* Elemento completamente visível no final */

@@ -48,7 +48,7 @@ $steamprofile = [
 // Enviar cabeçalho para resposta JSON
 header("Access-Control-Allow-Headers: Content-Type");
 header('Content-Type: application/json');
-$allowed_origin = 'https://avalonservers.rf.gd';
+$allowed_origin = 'https://avalonservers.site';
 header("Access-Control-Allow-Origin: $allowed_origin");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Credentials: true");

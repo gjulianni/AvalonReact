@@ -22,8 +22,7 @@ const VideoComponent = () => {
   }
 
   const opts = {
-    height: '390',
-    width: '640',
+    
     playerVars: {
       autoplay: 1,  // Auto play
       controls: 0,  // Não mostrar controles
@@ -82,8 +81,8 @@ const VideoComponent = () => {
         <p>Com modos inovadores, uma comunidade ativa e atualizações constantes, você vai querer jogar sempre mais!</p>
         
         {/* Botões em linha */}
-        <div className="button-container" onClick={handleServersClick}>
-        <button className="btn">
+        <div className="button-container">
+        <button className="btn" onClick={handleServersClick}>
         <FaSteam style={{ marginRight: '8px' }} />
         Servidores
       </button>
