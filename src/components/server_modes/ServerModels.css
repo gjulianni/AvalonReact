@@ -184,6 +184,146 @@
   animation: slideUp 0.5s ease-out forwards;
   }
 
+  .open-modal-button {
+    background-color: yellow;
+    border: none;
+    outline: none;
+    color: #01468f;
+    margin: 10px;
+    font-size: 30px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: .3s ease transform;
+  }
+  
+  .open-modal-button:hover {
+    transform: scale(1.1);
+  }
+
+  @keyframes slideIn {
+    0% {
+      transform: scale(0.1); 
+      opacity: 0; 
+    }
+    70% {
+      transform: scale(1.02); 
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1); 
+      opacity: 1;
+    }
+  }
+ 
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    
+  }
+  
+ 
+  .modal-content {
+    background-color: black;
+    padding: 20px;
+    
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    max-height: 80vh;
+    color: white;
+    position: relative;
+    animation: slideIn .45s ease-out;
+  }
+  
+  
+  .close-modal-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    color: white;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+}
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: black;
+    color: white;
+   
+  }
+  
+  th,
+  td {
+    border: 1px solid white; /* Bordas brancas */
+    padding: 8px;
+    
+    text-align: center;
+  }
+  
+  th {
+    background-color: #1e1e1e; /* Fundo escuro para os títulos */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+   
+  }
+  
+  tr:nth-child(even) td {
+    background-color: #121212; /* Fundo um pouco mais claro para linhas alternadas */
+  }
+  
+  tr:hover td {
+    background-color: #333333; /* Fundo de hover */
+    cursor: pointer;
+  }
+
+  .player-table-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .toggle-icon-table:hover {
+    background-color: #013567;
+  }
+
+  .toggle-icon-table {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+    color: #fff;
+    background-color: #01468f;
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 999999;
+    transition: background-color 0.3s ease;
+  }
+
   .rules-container {
     display: flex;
     flex-direction: column;
@@ -286,7 +426,9 @@
     z-index: 99999999999999999999999999;
     display: flex;
     flex-direction: column;
-
+    align-items: center;
+    justify-content: center;
+    height: 100%;
   }
 
   .connect-to-server {
@@ -383,3 +525,4 @@
     visibility: visible;
     opacity: 1;
   }
+

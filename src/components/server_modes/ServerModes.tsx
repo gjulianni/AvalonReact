@@ -12,8 +12,16 @@ interface serverInfo {
     map: string;
     players: number;
     maxPlayers: number;
+    playerList: Player[];
     ip: string;
     port: string;
+}
+
+interface Player {
+  name: string;
+  score: number;
+  duration: number;
+
 }
 
 interface ServerResponse {
@@ -27,9 +35,22 @@ const ServerModels: React.FC = () => {
     const [selectedMode, setSelectedMode] = useState<'zombieEscape' | 'jailbreak'>('zombieEscape');
     const [serverInfo, setServerInfo] = useState<serverInfo | null>(null);
     const [thumbnailUrl, setThumbnailUrl] = useState<string | null>(null);
+    const [showModal, setShowModal] = useState(false); 
+
+
+  const toggleModal = () => {
+    setShowModal((prev) => !prev);
+  };
     
     const handleModeChange = (mode: 'zombieEscape' | 'jailbreak') => {
       setSelectedMode(mode);
+    };
+
+    const formatName = (name: string): string => {
+      return name
+        .replace(/([A-Z])/g, ' $1')  // Adiciona um espaço antes de letras maiúsculas
+        .replace(/^./, (str) => str.toUpperCase())  // Torna a primeira letra maiúscula
+        .trim();  // Remove espaços extras no início ou fim
     };
 
     useEffect(() => {
@@ -52,6 +73,24 @@ const ServerModels: React.FC = () => {
         fetchServerInfo();
     }, [selectedMode]);  
 
+
+    const formatDuration = (seconds: number): string => { 
+      const hours = Math.floor(seconds / 3600);
+      const minutes = Math.floor((seconds % 3600) / 60);
+      const remainingSeconds = seconds % 60;
+  
+      const formattedTime: string[] = [];
+      
+      if (hours > 0) formattedTime.push(`${hours}h`);
+      if (minutes > 0) formattedTime.push(`${minutes}m`);
+      
+      // Limitando os segundos a duas casas decimais se houver
+      if (remainingSeconds > 0 && hours === 0) {
+          formattedTime.push(`${remainingSeconds.toFixed(0)}s`);
+      }
+  
+      return formattedTime.join(' ');
+  };
     const connectServer = () => {
       if(serverInfo && serverInfo !==null ) {
         window.location.href= `steam://connect/${serverInfo.ip}:${serverInfo.port}`
@@ -189,6 +228,12 @@ const ServerModels: React.FC = () => {
     </button>                   
                       <span className="tooltip-text">Copiar IP para a área de transferência</span>
                     </div>
+                    <div className="tooltip">
+                    <button onClick={toggleModal} className="open-modal-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="28" viewBox="2 0 20 20" fill="currentColor" stroke="#01468f" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+      </button>
+      <span className="tooltip-text">Exibir lista de jogadores</span>
+                    </div>
                     </div>
                     {thumbnailUrl && (
                         <div
@@ -211,7 +256,52 @@ const ServerModels: React.FC = () => {
                     
           </div>
   
-          
+          <div>
+
+      {/* Modal de tabela */}
+      {showModal && (
+        <div className="modal-overlay" onClick={toggleModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-modal-button" onClick={toggleModal}>
+              ✖
+            </button>
+            <div className="table-container">
+              {serverInfo ? (
+                <div>
+                   <h3>Playerlist {formatName(selectedMode)}</h3>
+                  <table className="styled-table">
+                    <thead>
+                      <tr>
+                        <th>Nome</th>
+                        <th>Score</th>
+                        <th>Tempo</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {serverInfo.playerList.length > 0 ? (
+                        serverInfo.playerList.map((player, index) => (
+                          <tr key={index}>
+                            <td>{player.name}</td>
+                            <td>{player.score}</td>
+                            <td>{formatDuration(player.duration)}</td>
+                          </tr>
+                        ))
+                      ) : (
+                        <tr>
+                          <td colSpan={3}>Não há jogadores neste servidor no momento.</td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              ) : (
+                <p>Carregando lista de jogadores...</p>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
           
   
           <div className="rules-container">
